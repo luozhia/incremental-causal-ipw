@@ -1,7 +1,6 @@
 # Incremental Causal Effect for Time to Treatment Initialization
 
-Code accompanying the paper **"Incremental Causal Effect for Time to Treatment
-Initialization"** (Ying, Zhao & Xu, *Proceedings of ICLR 2025*).
+Code accompanying the paper **["Incremental Causal Effect for Time to Treatment Initialization"](https://openreview.net/forum?id=0mtz0pet1z)** (Ying, Zhao & Xu, *Proceedings of ICLR 2025*).
 
 The paper studies the *incremental causal effect* of intervening on the
 **intensity of time to treatment initiation** — i.e. what happens to an outcome
@@ -29,7 +28,7 @@ intervals come from a multiplier (weighted) bootstrap.
 ## Repository structure
 
 ```
-incremental-causal-effect/
+incremental-causal-ipw/
 ├── README.md
 └── R
     ├── simulation.R           # Section 4.1: finite-sample simulation study
@@ -77,14 +76,3 @@ install.packages(c("survival", "ggplot2"))
 ```
 
 `simulation.R` needs only `survival`. `data_application.R` additionally uses `ggplot2`.
-
-## Citation
-
-```bibtex
-@inproceedings{ying2025incremental,
-  title     = {Incremental Causal Effect for Time to Treatment Initialization},
-  author    = {Ying, Andrew and Zhao, Zhichen and Xu, Ronghui},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2025}
-}
-```
