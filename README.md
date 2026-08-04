@@ -1,6 +1,6 @@
 # Incremental Causal Effect for Time to Treatment Initialization
 
-Code accompanying the paper **["Incremental Causal Effect for Time to Treatment Initialization"](https://openreview.net/forum?id=0mtz0pet1z)** (Ying, A., \textbf{Zhao, Z.}, and Xu, R., *Proceedings of ICLR 2025*).
+Code accompanying the paper **["Incremental Causal Effect for Time to Treatment Initialization"](https://openreview.net/forum?id=0mtz0pet1z)** (Ying, A., **Zhao, Z.**, and Xu, R., *Proceedings of ICLR 2025*).
 
 The paper studies the *incremental causal effect* of intervening on the
 **intensity of time to treatment initiation** — i.e. what happens to an outcome
@@ -12,8 +12,8 @@ root-*n* inference via a multiplier bootstrap.
 ## The estimand and estimator
 
 For a hazard-ratio intervention $\theta$ applied to the treatment-initiation
-hazard $\lambda(t \mid L)$, the incremental causal effect is
-$\psi(\theta) = E\{Y_{T(\theta)}\}$. Under
+hazard $\lambda(t | L)$, the incremental causal effect is
+$\psi(\theta) = E \{ Y_{T(\theta)} \}$. Under
 consistency and sequential randomization, it is identified (Theorem 1) and
 estimated by reweighting the observed outcomes:
   
@@ -65,7 +65,7 @@ The header of the script documents the exact columns `df` must contain
 > **Data availability.** The patient-level data are **not** included in this
 > repository for privacy reasons. The construction of `df` from raw per-visit
 > records is omitted; supply your own prepared `df` (as described in the script
-                                                     > header) to run the analysis.
+> header) to run the analysis.
 
 ## Requirements
 
