@@ -1,6 +1,6 @@
 # Incremental Causal Effect for Time to Treatment Initialization
 
-Code accompanying the paper **["Incremental Causal Effect for Time to Treatment Initialization"](https://openreview.net/forum?id=0mtz0pet1z)** (Ying, Zhao & Xu, *Proceedings of ICLR 2025*).
+Code accompanying the paper **["Incremental Causal Effect for Time to Treatment Initialization"](https://openreview.net/forum?id=0mtz0pet1z)** (Ying, A., \textbf{Zhao, Z.}, and Xu, R., *Proceedings of ICLR 2025*).
 
 The paper studies the *incremental causal effect* of intervening on the
 **intensity of time to treatment initiation** — i.e. what happens to an outcome
