@@ -7,7 +7,7 @@ The paper studies the *incremental causal effect* of intervening on the
 **intensity of time to treatment initiation** — i.e. what happens to an outcome
 if the hazard of starting treatment is scaled by a factor $\theta$. It provides
 identification **without the positivity assumption**, an inverse-probability-
-weighted (IPW) estimator that reuses standard survival-analysis software, and
+  weighted (IPW) estimator that reuses standard survival-analysis software, and
 root-*n* inference via a multiplier bootstrap.
 
 ## The estimand and estimator
@@ -17,8 +17,8 @@ hazard $\lambda(t \mid L)$, the incremental causal effect is
 $\psi(\theta) = E\{Y_{T(\theta)}\}$. Under
 consistency and sequential randomization, it is identified (Theorem 1) and
 estimated by reweighting the observed outcomes:
-
-```
+  
+  ```
 psi_hat(theta) = mean( theta^Delta * exp(-(theta - 1) * cumhaz) * Y )
 ```
 
@@ -30,9 +30,9 @@ intervals come from a multiplier (weighted) bootstrap.
 
 ```
 incremental-causal-effect/
-├── README.md
+  ├── README.md
 ├── R/
-│   ├── simulation.R           # Section 4.1: finite-sample simulation study
+  │   ├── simulation.R           # Section 4.1: finite-sample simulation study
 │   └── data_application.R     # Section 4.2: rheumatoid arthritis (Methotrexate) analysis
 └── .gitignore
 ```
@@ -54,31 +54,30 @@ table rows (Table 1 in the paper).
 ## `R/data_application.R` — data application (Section 4.2)
 
 Estimates the incremental effect of the time to initiate **Methotrexate (MTX)**
-on the number of tender joints at one year in a rheumatoid arthritis cohort. The
+  on the number of tender joints at one year in a rheumatoid arthritis cohort. The
 script starts from an already-prepared, one-row-per-patient data frame `df`,
 checks the proportional-hazards assumption (Schoenfeld residuals and cumulative
-martingale residuals), drops covariates that violate it, applies the IPW
+                                            martingale residuals), drops covariates that violate it, applies the IPW
 estimator over $\theta \in [0.2, 5]$ with multiplier-bootstrap pointwise 95%
 CIs, and plots $\hat{\psi}(\theta)$.
 
 The header of the script documents the exact columns `df` must contain
-(`A`, `Delta`, `Y`, and the baseline covariates in `L.ext`).
+(`A`, `Delta`, `Y`, and the baseline covariates in `L`).
 
 > **Data availability.** The patient-level data are **not** included in this
 > repository for privacy reasons. The construction of `df` from raw per-visit
 > records is omitted; supply your own prepared `df` (as described in the script
-> header) to run the analysis.
+                                                     > header) to run the analysis.
 
 ## Requirements
 
 R with the following packages:
-
+  
 ```r
-install.packages(c("survival", "timereg", "ggplot2"))
+install.packages(c("survival", "ggplot2"))
 ```
 
-`simulation.R` needs only `survival`. `data_application.R` additionally uses
-`timereg` (cumulative martingale residual check) and `ggplot2`.
+`simulation.R` needs only `survival`. `data_application.R` additionally uses `ggplot2`.
 
 ## Citation
 
