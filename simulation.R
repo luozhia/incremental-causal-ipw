@@ -14,9 +14,6 @@
 # accordingly to reproduce the published numbers (this is computationally heavy).
 # =============================================================================
 
-rm(list = ls())
-setwd(dirname(rstudioapi::getSourceEditorContext()$path))  # run from this file's folder (RStudio)
-set.seed(12345)
 library(survival)   # coxph(), Surv() for the nuisance hazard model
 
 # ---- Data-generating parameters (see Section 4.1 of the paper) --------------
@@ -56,8 +53,6 @@ for (hz_ratio in cand_set) {
   df <- data_gen(N, para_set, hz_ratio)
   truth_set <- c(truth_set, mean(df$Y))
 }
-
-# plot(cand_set, truth_set, type = "l")
 
 rep_num <- 1   # R: number of Monte Carlo replications  (paper: 1000)
 B <- 2         # B: number of multiplier-bootstrap draws (paper: 200)
@@ -128,19 +123,8 @@ print_table <- function(my_matrix) {
   return(my_matrix)
 }
 
-
-# ---- Run for each sample size and print the LaTeX table rows ----------------
+# ---- Run for a sample size and print the LaTeX table rows ----------------
 N <- 200
-result <- simu()
-my_matrix <- result_gen(result)
-print_table(my_matrix)
-
-N <- 1000
-result <- simu()
-my_matrix <- result_gen(result)
-print_table(my_matrix)
-
-N <- 5000
 result <- simu()
 my_matrix <- result_gen(result)
 print_table(my_matrix)
