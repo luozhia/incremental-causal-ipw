@@ -6,8 +6,8 @@ Initialization"** (Ying, Zhao & Xu, *Proceedings of ICLR 2025*).
 The paper studies the *incremental causal effect* of intervening on the
 **intensity of time to treatment initiation** — i.e. what happens to an outcome
 if the hazard of starting treatment is scaled by a factor $\theta$. It provides
-identification **without the positivity assumption**, an inverse-probability-
-  weighted (IPW) estimator that reuses standard survival-analysis software, and
+identification **without the positivity assumption**, an inverse-probability-weighted (IPW) estimator 
+that reuses standard survival-analysis software, and
 root-*n* inference via a multiplier bootstrap.
 
 ## The estimand and estimator
@@ -18,7 +18,7 @@ $\psi(\theta) = E\{Y_{T(\theta)}\}$. Under
 consistency and sequential randomization, it is identified (Theorem 1) and
 estimated by reweighting the observed outcomes:
   
-  ```
+```
 psi_hat(theta) = mean( theta^Delta * exp(-(theta - 1) * cumhaz) * Y )
 ```
 
@@ -30,9 +30,9 @@ intervals come from a multiplier (weighted) bootstrap.
 
 ```
 incremental-causal-effect/
-  ├── README.md
+├── README.md
 ├── R/
-  │   ├── simulation.R           # Section 4.1: finite-sample simulation study
+│   ├── simulation.R           # Section 4.1: finite-sample simulation study
 │   └── data_application.R     # Section 4.2: rheumatoid arthritis (Methotrexate) analysis
 └── .gitignore
 ```
