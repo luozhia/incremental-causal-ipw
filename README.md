@@ -14,7 +14,7 @@ root-*n* inference via a multiplier bootstrap.
 
 For a hazard-ratio intervention $\theta$ applied to the treatment-initiation
 hazard $\lambda(t \mid L)$, the incremental causal effect is
-$\psi(\theta) = E[Y_{T(\theta)}]$. Under
+$\psi(\theta) = E\{Y_{T(\theta)}\}$. Under
 consistency and sequential randomization, it is identified (Theorem 1) and
 estimated by reweighting the observed outcomes:
 
