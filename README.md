@@ -31,10 +31,9 @@ intervals come from a multiplier (weighted) bootstrap.
 ```
 incremental-causal-effect/
 ├── README.md
-├── R/
-│   ├── simulation.R           # Section 4.1: finite-sample simulation study
-│   └── data_application.R     # Section 4.2: rheumatoid arthritis (Methotrexate) analysis
-└── .gitignore
+└── R
+    ├── simulation.R           # Section 4.1: finite-sample simulation study
+    └── data_application.R     # Section 4.2: rheumatoid arthritis (Methotrexate) analysis
 ```
 
 ## `R/simulation.R` — simulation study (Section 4.1)
